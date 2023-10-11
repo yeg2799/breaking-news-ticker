@@ -1,13 +1,13 @@
 <template lang="pug">
-.breaking-news-ticker-item
-  .breaking-news-ticker-item__news {{ item }}
+.breaking-news-ticker-news
+  .breaking-news-ticker-news__item {{ item }}
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
 
 export default defineComponent({
-  name: 'BreakingNewsTickerItem',
+  name: 'BreakingNewsTickerNews',
   props: {
     item: {
       type: String,
@@ -19,5 +19,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import './breaking-news-ticker-item.scss';
+@import './breaking-news-ticker-news.scss';
 </style>

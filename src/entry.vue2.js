@@ -1,13 +1,13 @@
 // Import vue component
-import component from './app.vue'
-// App style entrypoint
-import './assets/style/scss/app.scss'
+import * as components from './components/index.ts'
 
 // install function executed by Vue.use()
 const install = function installComponent(Vue) {
   if (install.installed) return
   install.installed = true
-  Vue.component('VueBreakingNewsTicker', component)
+  Object.entries(components).forEach(([componentName, component]) => {
+    Vue.component(componentName, component)
+  })
 }
 
 // Create module definition for Vue.use()

@@ -47,7 +47,7 @@ const baseConfig = {
       preventAssignment: true
     },
     scss: {
-      fileName: 'vue-plugin-boilerplate.css',
+      fileName: 'breaking-news-ticker.css',
       sass: sass
     },
     css: {},
@@ -97,7 +97,7 @@ if (!argv.format || argv.format === 'umd') {
         format: 'umd',
         exports: 'named',
         globals,
-        name: 'PluginBoilerplate',
+        name: 'BreakingNewsTicker',
         plugins: [
           terser({
             ...baseConfig.plugins.terser
@@ -105,18 +105,18 @@ if (!argv.format || argv.format === 'umd') {
         ]
       },
       {
-        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.umd.js`,
+        file: `dist/${VUE_DIRNAME}/breaking-news-ticker.umd.js`,
         format: 'umd',
         exports: 'named',
         globals,
-        name: 'PluginBoilerplate'
+        name: 'BreakingNewsTicker'
       },
       {
-        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.umd.min.js`,
+        file: `dist/${VUE_DIRNAME}/breaking-news-ticker.umd.min.js`,
         format: 'umd',
         exports: 'named',
         globals,
-        name: 'PluginBoilerplate',
+        name: 'BreakingNewsTicker',
         plugins: [
           terser({
             ...baseConfig.plugins.terser
@@ -124,16 +124,16 @@ if (!argv.format || argv.format === 'umd') {
         ]
       },
       {
-        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.global.js`,
+        file: `dist/${VUE_DIRNAME}/breaking-news-ticker.global.js`,
         format: 'umd',
         globals,
-        name: 'PluginBoilerplate'
+        name: 'BreakingNewsTicker'
       },
       {
-        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.global.min.js`,
+        file: `dist/${VUE_DIRNAME}/breaking-news-ticker.global.min.js`,
         format: 'umd',
         globals,
-        name: 'PluginBoilerplate',
+        name: 'BreakingNewsTicker',
         plugins: [
           terser({
             ...baseConfig.plugins.terser
@@ -179,12 +179,12 @@ if (!argv.format || argv.format === 'es') {
     external,
     output: [
       {
-        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.mjs`,
+        file: `dist/${VUE_DIRNAME}/breaking-news-ticker.mjs`,
         format: 'esm',
         exports: 'named'
       },
       {
-        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.min.mjs`,
+        file: `dist/${VUE_DIRNAME}/breaking-news-ticker.min.mjs`,
         format: 'esm',
         exports: 'named',
         plugins: [
@@ -233,17 +233,17 @@ if (!argv.format || argv.format === 'cjs') {
     output: [
       {
         compact: true,
-        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.cjs`,
+        file: `dist/${VUE_DIRNAME}/breaking-news-ticker.cjs`,
         format: 'cjs',
-        name: 'PluginBoilerplate',
+        name: 'BreakingNewsTicker',
         exports: 'named',
         globals
       },
       {
         compact: true,
-        file: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.min.cjs`,
+        file: `dist/${VUE_DIRNAME}/breaking-news-ticker.min.cjs`,
         format: 'cjs',
-        name: 'PluginBoilerplate',
+        name: 'BreakingNewsTicker',
         exports: 'named',
         globals,
         plugins: [
@@ -286,13 +286,13 @@ buildFormats.push(typesConfig)
 
 // Base style minifier
 const baseStyleMinifierConfig = {
-  input: `dist/${VUE_DIRNAME}/vue-plugin-boilerplate.css`,
+  input: `dist/${VUE_DIRNAME}/breaking-news-ticker.css`,
   output: {
-    file: `./dist/${VUE_DIRNAME}/vue-plugin-boilerplate.min.css`
+    file: `./dist/${VUE_DIRNAME}/breaking-news-ticker.min.css`
   },
   plugins: [
     scss({
-      fileName: `vue-plugin-boilerplate.min.css`,
+      fileName: `breaking-news-ticker.min.css`,
       sass: sass,
       outputStyle: 'compressed'
     })
