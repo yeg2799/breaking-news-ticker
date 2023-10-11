@@ -1,5 +1,7 @@
 // Import vue component
-import component from './vue-plugin-boilerplate.vue'
+import component from './app.vue'
+// App style entrypoint
+import './assets/style/scss/app.scss'
 
 // Default export is installable instance of component.
 // IIFE injects install function into component, allowing component
@@ -10,7 +12,7 @@ export default /*#__PURE__*/ (() => {
 
   // Attach install function executed by Vue.use()
   installable.install = app => {
-    app.component('PluginBoilerplate', installable)
+    app.component('VueBreakingNewsTicker', installable)
   }
 
   return installable

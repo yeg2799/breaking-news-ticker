@@ -1,1 +1,1 @@
-export type BaseClassNameTypes = 'vue-plugin-boilerplate'
+export type BaseClassNameTypes = 'vue-breaking-news-ticker'

@@ -1,12 +1,13 @@
 <template lang="pug">
-PluginBoilerplate
+#app
+  VueBreakingNewsTicker
 </template>
 
 <script setup lang="ts">
 /* @ts-ignore */
-import PluginBoilerplate from '../../../src/vue-plugin-boilerplate.vue'
+import VueBreakingNewsTicker from '../../../src/app.vue'
 </script>
 
 <style lang="scss">
-@import '../../../src/vue-plugin-boilerplate.scss';
+@import '../../../src/app.scss';
 </style>

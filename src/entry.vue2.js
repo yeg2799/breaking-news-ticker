@@ -1,11 +1,13 @@
 // Import vue component
-import component from './vue-plugin-boilerplate.vue'
+import component from './app.vue'
+// App style entrypoint
+import './assets/style/scss/app.scss'
 
 // install function executed by Vue.use()
 const install = function installComponent(Vue) {
   if (install.installed) return
   install.installed = true
-  Vue.component('PluginBoilerplate', component)
+  Vue.component('VueBreakingNewsTicker', component)
 }
 
 // Create module definition for Vue.use()

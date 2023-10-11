@@ -1,6 +1,6 @@
 <template lang="pug">
-.vue-plugin-boilerplate(ref="rootRef" :class="[activeClass]")
-  button(@click="toggle") Toggle
+.vue-breaking-news-ticker
+  span breaking news
 </template>
 
 <script lang="ts">
@@ -8,9 +8,9 @@ import { defineComponent, ref, reactive, computed } from 'vue-demi'
 import type { BaseClassNameTypes } from '@/types'
 
 export default defineComponent({
-  name: 'PluginBoilerplate',
+  name: 'VueBreakingNewsTicker',
   setup() {
-    const baseClassName: BaseClassNameTypes = 'vue-plugin-boilerplate'
+    const baseClassName: BaseClassNameTypes = 'vue-breaking-news-ticker'
 
     const rootRef = ref(null)
 
@@ -40,5 +40,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import './vue-plugin-boilerplate.scss';
+@import './app.scss';
 </style>
