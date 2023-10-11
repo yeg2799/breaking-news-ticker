@@ -1,13 +1,13 @@
 <template lang="pug">
 #app
-  VueBreakingNewsTicker
+  breaking-news-ticker-section
 </template>
 
 <script setup lang="ts">
 /* @ts-ignore */
-import VueBreakingNewsTicker from '../../../src/app.vue'
+import BreakingNewsTickerSection from './components/breaking-news-ticker/breaking-news-ticker-section.vue'
 </script>
 
 <style lang="scss">
-@import '../../../src/app.scss';
+// @import '../../../src/app.scss';
 </style>
