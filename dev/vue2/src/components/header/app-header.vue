@@ -3,9 +3,7 @@
   span header
 </template>
 
-<script>
-export default {}
-</script>
+<script lang="ts"></script>
 
 <style lang="scss">
 @import './app-header.scss';
