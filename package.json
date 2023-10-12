@@ -1,5 +1,5 @@
 {
-  "name": "vue-plugin-boilerplate",
+  "name": "breaking-news-ticker",
   "version": "0.0.1",
   "description": "Vue Breaking News Ticker",
   "keywords": [
@@ -18,17 +18,17 @@
     "url": "https://github.com/yeg2799/v-breaking-news-ticker.git"
   },
   "main": "dist/vue3/index.js",
-  "module": "dist/vue3/vue-plugin-boilerplate.mjs",
-  "browser": "dist/vue3/vue-plugin-boilerplate.global.js",
-  "unpkg": "dist/vue3/vue-plugin-boilerplate.global.js",
+  "module": "dist/vue3/breaking-news-ticker.mjs",
+  "browser": "dist/vue3/breaking-news-ticker.global.js",
+  "unpkg": "dist/vue3/breaking-news-ticker.global.js",
   "exports": {
     ".": {
-      "require": "./dist/vue3/vue-plugin-boilerplate.cjs",
+      "require": "./dist/vue3/breaking-news-ticker.cjs",
       "import": "./dist/vue3/index.js",
-      "browser": "./dist/vue3/vue-plugin-boilerplate.global.js",
-      "umd": "./dist/vue3/vue-plugin-boilerplate.umd.js",
-      "unpkg": "./dist/vue3/vue-plugin-boilerplate.global.js",
-      "module": "./dist/vue3/vue-plugin-boilerplate.mjs",
+      "browser": "./dist/vue3/breaking-news-ticker.global.js",
+      "umd": "./dist/vue3/breaking-news-ticker.umd.js",
+      "unpkg": "./dist/vue3/breaking-news-ticker.global.js",
+      "module": "./dist/vue3/breaking-news-ticker.mjs",
       "types": "./dist/index.d.ts"
     }
   },
