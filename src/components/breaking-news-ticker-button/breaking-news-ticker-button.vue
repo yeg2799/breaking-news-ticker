@@ -1,6 +1,6 @@
 <template lang="pug">
 .breaking-news-ticker-button
-  span {{ name }}
+  span(@click="handleClicked") {{ name }}
 </template>
 
 <script lang="ts">
@@ -12,6 +12,17 @@ export default defineComponent({
     name: {
       type: String,
       default: ''
+    }
+  },
+  // eslint-disable-next-line vue/no-setup-props-destructure
+  setup(props, { emit }) {
+    const handleClicked = () => {
+      console.log('handleClicked')
+      emit('clicked')
+    }
+
+    return {
+      handleClicked
     }
   }
 })

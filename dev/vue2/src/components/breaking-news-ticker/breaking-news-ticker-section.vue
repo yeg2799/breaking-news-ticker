@@ -17,7 +17,8 @@ import {
   BreakingNewsTickerRoot,
   BreakingNewsTickerTitle,
   BreakingNewsTickerNews,
-  BreakingNewsTickerControls
+  BreakingNewsTickerControls,
+  BreakingNewsTickerButton
 } from '../../../../../src/components'
 
 export default Vue.extend({
@@ -25,7 +26,8 @@ export default Vue.extend({
     BreakingNewsTickerRoot,
     BreakingNewsTickerTitle,
     BreakingNewsTickerNews,
-    BreakingNewsTickerControls
+    BreakingNewsTickerControls,
+    BreakingNewsTickerButton
   }
 })
 </script>

@@ -2,3 +2,4 @@ export { default as BreakingNewsTickerRoot } from './breaking-news-ticker-root/b
 export { default as BreakingNewsTickerTitle } from './breaking-news-ticker-title/breaking-news-ticker-title.vue'
 export { default as BreakingNewsTickerNews } from './breaking-news-ticker-news/breaking-news-ticker-news.vue'
 export { default as BreakingNewsTickerControls } from './breaking-news-ticker-controls/breaking-news-ticker-controls.vue'
+export { default as BreakingNewsTickerButton } from './breaking-news-ticker-button/breaking-news-ticker-button.vue'

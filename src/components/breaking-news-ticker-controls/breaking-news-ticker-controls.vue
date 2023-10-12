@@ -1,10 +1,13 @@
 <template lang="pug">
 .breaking-news-ticker-controls
-  breaking-news-ticker-button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--prev-button(name="prev")
-
-  breaking-news-ticker-button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--pause-button(name="pause")
-
-  breaking-news-ticker-button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--next-button(name="next")
+  template(v-if="isCustomIcon")
+    slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--left-button(name="left")
+    slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--mid-button(name="mid")
+    slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--right-button(name="right")
+  template(v-else)
+    breaking-news-ticker-button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--left-button(name="prev")
+    breaking-news-ticker-button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--mid-button(name="pause")
+    breaking-news-ticker-button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--right-button(name="next")
 </template>
 
 <script lang="ts">
@@ -17,11 +20,12 @@ export default defineComponent({
     BreakingNewsTickerButton
   },
   props: {
-    item: {
-      type: String,
-      required: true
+    isCustomIcon: {
+      type: Boolean,
+      default: false
     }
   },
+
   setup() {}
 })
 </script>

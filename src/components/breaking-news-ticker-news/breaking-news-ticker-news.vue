@@ -1,6 +1,9 @@
 <template lang="pug">
 .breaking-news-ticker-news
-  .breaking-news-ticker-news__item {{ item }}
+  template(v-if="isMultiple")
+    .breaking-news-ticker-news__item(v-for="i in 5" :key="i") {{ item }}
+  template(v-else)
+    .breaking-news-ticker-news__item {{ item }}
 </template>
 
 <script lang="ts">
@@ -12,6 +15,10 @@ export default defineComponent({
     item: {
       type: String,
       required: true
+    },
+    isMultiple: {
+      type: Boolean,
+      default: false
     }
   },
   setup() {}
