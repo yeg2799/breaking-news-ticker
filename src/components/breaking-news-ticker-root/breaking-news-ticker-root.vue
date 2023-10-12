@@ -2,7 +2,7 @@
 .breaking-news-ticker-root
   slot(name="title")
   slot(name="news")
-  slot(name="button")
+  slot(name="controls")
 </template>
 
 <script lang="ts">

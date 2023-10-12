@@ -1,23 +1,22 @@
 <template lang="pug">
-.breaking-news-ticker-title
-  span {{ title }}
+.breaking-news-ticker-button
+  span {{ name }}
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
 
 export default defineComponent({
-  name: 'BreakingNewsTickerTitle',
+  name: 'BreakingNewsTickerControls',
   props: {
-    title: {
+    name: {
       type: String,
-      required: true
+      default: ''
     }
-  },
-  setup() {}
+  }
 })
 </script>
 
 <style lang="scss">
-@import './breaking-news-ticker-title.scss';
+@import './breaking-news-ticker-button.scss';
 </style>

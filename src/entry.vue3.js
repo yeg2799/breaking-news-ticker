@@ -1,5 +1,7 @@
 // Import vue components
 import * as components from './components/index.ts'
+// App style entrypoint
+import './assets/style/scss/app.scss'
 
 // install function executed by Vue.use()
 const install = function installComponents(app) {
