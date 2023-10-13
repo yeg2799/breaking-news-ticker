@@ -1,4 +1,5 @@
 import { reactive, computed } from 'vue-demi'
+import { processEnum } from '@/enums'
 
 export default () => {
   const state = reactive({
@@ -16,12 +17,12 @@ export default () => {
     state.config = config
   }
 
-  const setActiveNews = (process: '') => {
+  const setActiveNews = (process: string) => {
     switch (process) {
-      case 'prev':
+      case processEnum.PREV:
         state.activeNews--
         break
-      case 'next':
+      case processEnum.NEXT:
         state.activeNews++
         break
       default:

@@ -1,12 +1,12 @@
 <template lang="pug">
-.breaking-news-ticker-root
+.breaking-news-ticker-root(:dir="dirAttr")
   slot(name="title")
   slot(name="news")
   slot(name="controls")
 </template>
 
 <script lang="ts">
-import { defineComponent, provide } from 'vue-demi'
+import { defineComponent, provide, computed } from 'vue-demi'
 import { useRoot } from '@/hooks'
 
 export default defineComponent({
@@ -34,6 +34,16 @@ export default defineComponent({
       activeNews
     })
     setNews(props.news)
+
+    const dirAttr = computed(() => {
+      if (config.value?.rtl) {
+        return 'rtl'
+      }
+    })
+
+    return {
+      dirAttr
+    }
   }
 })
 </script>

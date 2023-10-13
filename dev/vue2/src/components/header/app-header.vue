@@ -1,6 +1,6 @@
 <template lang="pug">
 .app-header
-  span header
+  span Breaking News Ticker
 </template>
 
 <script lang="ts"></script>

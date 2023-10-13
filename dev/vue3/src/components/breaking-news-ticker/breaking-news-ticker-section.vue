@@ -4,7 +4,7 @@
     template(#title)
       breaking-news-ticker-title(title="Son Dakika")
     template(#news)
-      breaking-news-ticker-news(item="Şok Şok Şok")
+      breaking-news-ticker-news
     template(#controls)
       breaking-news-ticker-controls
 </template>

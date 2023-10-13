@@ -1,6 +1,6 @@
 <template lang="pug">
 .app-header
-  span header
+  span Vue Breaking News Ticker
 </template>
 
 <script setup lang="ts">
