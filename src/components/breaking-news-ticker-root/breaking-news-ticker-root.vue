@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent, provide } from 'vue-demi'
-// import { useRoot } from '@/hooks'
+import { useRoot } from '@/hooks'
 
 export default defineComponent({
   name: 'BreakingNewsTickerRoot',
@@ -22,14 +22,18 @@ export default defineComponent({
     }
   },
   setup(props) {
-    // const { setNews, setConfig } = useRoot()
-    // setConfig(props.config)
-    // // Provide
-    // provide('root', {
-    //   setNews,
-    //   setConfig
-    // })
-    // setNews(props.news)
+    const { setNews, setConfig, setActiveNews, news, config, activeNews } = useRoot()
+    setConfig(props.config)
+    // Provide
+    provide('root', {
+      setNews,
+      setConfig,
+      setActiveNews,
+      news,
+      config,
+      activeNews
+    })
+    setNews(props.news)
   }
 })
 </script>

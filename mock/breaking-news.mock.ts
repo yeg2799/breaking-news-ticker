@@ -5,15 +5,15 @@ const breakingNews = [
   },
   {
     id: 1,
-    title: 'Şok Şok Messi AdanaDemirsporda'
+    title: 'Adanada kaza'
   },
   {
-    id: 2,
-    title: 'Şok Şok Messi AdanaDemirsporda'
+    id: 3,
+    title: 'Mersinde yük treni kaza yaptı'
   },
   {
-    id: 2,
-    title: 'Şok Şok Messi AdanaDemirsporda'
+    id: 4,
+    title: 'Ünlü şarkıcı o kadın benim dedi'
   }
 ]
 

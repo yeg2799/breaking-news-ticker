@@ -16,10 +16,24 @@ export default () => {
     state.config = config
   }
 
+  const setActiveNews = (process: '') => {
+    switch (process) {
+      case 'prev':
+        state.activeNews--
+        break
+      case 'next':
+        state.activeNews++
+        break
+      default:
+        break
+    }
+  }
+
   // Readables
   const news = computed(() => state.news)
 
   const config = computed(() => state.config)
+  const activeNews = computed(() => state.activeNews)
 
   return {
     // State
@@ -27,8 +41,10 @@ export default () => {
     //Methods
     setNews,
     setConfig,
+    setActiveNews,
     // Readables
     news,
-    config
+    config,
+    activeNews
   }
 }
