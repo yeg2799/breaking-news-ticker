@@ -2,14 +2,14 @@
 .breaking-news-ticker-controls
   template(v-if="isCustomIcon")
     slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--left-button(name="left")
-    slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--mid-button(name="mid")
+    //- slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--mid-button(name="mid")
     slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--right-button(name="right")
   template(v-else)
     button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--left-button(
       :disabled="isFirstNews"
       @click="handleClicked('prev')"
     ) prev
-    button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--mid-button(@click="handleClicked('pause')") pause
+    //- button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--mid-button(@click="handleClicked('pause')") pause
     button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--right-button(
       :disabled="isLastNews"
       @click="handleClicked('next')"

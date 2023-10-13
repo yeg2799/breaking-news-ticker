@@ -16,8 +16,7 @@ import {
   BreakingNewsTickerRoot,
   BreakingNewsTickerTitle,
   BreakingNewsTickerNews,
-  BreakingNewsTickerControls,
-  BreakingNewsTickerButton
+  BreakingNewsTickerControls
 } from '../../../../../src/components'
 
 export default defineComponent({
@@ -25,8 +24,7 @@ export default defineComponent({
     BreakingNewsTickerRoot,
     BreakingNewsTickerTitle,
     BreakingNewsTickerNews,
-    BreakingNewsTickerControls,
-    BreakingNewsTickerButton
+    BreakingNewsTickerControls
   },
   props: {
     news: {
