@@ -15,7 +15,7 @@ export default defineComponent({
     }
   },
   // eslint-disable-next-line vue/no-setup-props-destructure
-  setup(props, { emit }) {
+  setup(_, { emit }) {
     const handleClicked = () => {
       console.log('handleClicked')
       emit('clicked')

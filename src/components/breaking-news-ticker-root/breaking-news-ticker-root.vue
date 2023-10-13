@@ -6,17 +6,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue-demi'
+import { defineComponent, provide } from 'vue-demi'
+// import { useRoot } from '@/hooks'
 
 export default defineComponent({
-  name: 'BreakingNewsTicker',
+  name: 'BreakingNewsTickerRoot',
   props: {
-    isMultiple: {
-      type: Boolean,
-      default: false
+    news: {
+      type: Array,
+      required: true
+    },
+    config: {
+      type: Object,
+      default: () => {}
     }
   },
-  setup() {}
+  setup(props) {
+    // const { setNews, setConfig } = useRoot()
+    // setConfig(props.config)
+    // // Provide
+    // provide('root', {
+    //   setNews,
+    //   setConfig
+    // })
+    // setNews(props.news)
+  }
 })
 </script>
 

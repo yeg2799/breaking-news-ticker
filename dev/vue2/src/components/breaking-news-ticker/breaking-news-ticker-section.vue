@@ -1,6 +1,6 @@
 <template lang="pug">
 .breaking-news-ticker-section
-  breaking-news-ticker-root
+  breaking-news-ticker-root(:news="news" :config="config")
     template(#title)
       breaking-news-ticker-title(title="Son Dakika")
     template(#news)
@@ -28,6 +28,16 @@ export default Vue.extend({
     BreakingNewsTickerNews,
     BreakingNewsTickerControls,
     BreakingNewsTickerButton
+  },
+  props: {
+    news: {
+      type: Array,
+      required: true
+    },
+    config: {
+      type: Object,
+      required: true
+    }
   }
 })
 </script>

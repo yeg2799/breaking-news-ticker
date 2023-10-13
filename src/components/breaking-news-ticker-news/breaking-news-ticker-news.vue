@@ -1,27 +1,22 @@
 <template lang="pug">
 .breaking-news-ticker-news
-  template(v-if="isMultiple")
-    .breaking-news-ticker-news__item(v-for="i in 5" :key="i") {{ item }}
-  template(v-else)
-    .breaking-news-ticker-news__item {{ item }}
+  .breaking-news-ticker-news__item(v-for="i in news" :key="i")
+    span {{ i }}
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue-demi'
+import { defineComponent, inject } from 'vue-demi'
 
 export default defineComponent({
   name: 'BreakingNewsTickerNews',
-  props: {
-    item: {
-      type: String,
-      required: true
-    },
-    isMultiple: {
-      type: Boolean,
-      default: false
+  setup() {
+    const { news } = inject('root')
+    console.log(inject('root'))
+
+    return {
+      news
     }
-  },
-  setup() {}
+  }
 })
 </script>
 
