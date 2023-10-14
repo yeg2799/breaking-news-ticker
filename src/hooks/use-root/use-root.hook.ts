@@ -1,5 +1,5 @@
 import { reactive, computed } from 'vue-demi'
-import { processEnum } from '@/enums'
+import { processEnum } from '@/enums/index.ts'
 
 export default () => {
   const state = reactive({

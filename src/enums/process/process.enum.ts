@@ -1,4 +1,4 @@
-import { ProcessEnum } from './process.enum.types'
+import { ProcessEnum } from './process.enum.types.ts'
 
 export default Object.freeze({
   PREV: ProcessEnum.PREV,

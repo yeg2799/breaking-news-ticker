@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent, provide, computed } from 'vue-demi'
-import { useRoot } from '@/hooks'
+import { useRoot } from '@/hooks/index.ts'
 
 export default defineComponent({
   name: 'BreakingNewsTickerRoot',

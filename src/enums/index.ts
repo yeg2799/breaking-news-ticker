@@ -1,1 +1,1 @@
-export { default as processEnum } from './process/process.enum'
+export { default as processEnum } from './process/process.enum.ts'

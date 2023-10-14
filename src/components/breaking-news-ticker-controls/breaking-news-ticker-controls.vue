@@ -4,7 +4,7 @@
     slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--left-button(name="left")
     //- slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--mid-button(name="mid")
     slot.breaking-news-ticker-controls--button.breaking-news-ticker-controls--right-button(name="right")
-  template(v-else)
+  template(v-else-if="!isCustomIcon")
     button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--left-button(
       :disabled="isFirstNews"
       @click="handleClicked('prev')"
