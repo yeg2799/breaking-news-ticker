@@ -48,13 +48,16 @@ import 'v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 <script src="https://unpkg.com/v-breaking-news-ticker"></script>
 <link 
  rel="stylesheet" 
- href="https://unpkg.com/v-breaking-news-ticker@0.0.1/dist/vue3/breaking-news-ticker.min.css"
+ href="https://unpkg.com/v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css"
 >
 
 <script>
   const app = Vue.createApp({})
     
   app.use(BreakingNewsTickerRoot)
+  app.use(BreakingNewsTickerTitle);
+  app.use(BreakingNewsTickerNews);
+  app.use(BreakingNewsTickerControls);
   app.mount('#app')
 </script>
 ```
@@ -94,7 +97,7 @@ export default {
 <script src="https://unpkg.com/v-breaking-news-ticker"></script>
 <link 
  rel="stylesheet" 
- href="https://unpkg.com/v-breaking-news-ticker@0.0.1/dist/vue3/breaking-news-ticker.min.css"
+ href="https://unpkg.com/v-breaking-news-ticker/dist/vue2/breaking-news-ticker.min.css"
 >
 
 <script>
@@ -103,6 +106,9 @@ new  Vue({
 });
 
 Vue.use(BreakingNewsTickerRoot);
+Vue.use(BreakingNewsTickerTitle);
+Vue.use(BreakingNewsTickerNews);
+Vue.use(BreakingNewsTickerControls);
 </script>
 ```
 &nbsp;
