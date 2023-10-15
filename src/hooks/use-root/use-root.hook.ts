@@ -32,7 +32,6 @@ export default () => {
 
   // Readables
   const news = computed(() => state.news)
-
   const config = computed(() => state.config)
   const activeNews = computed(() => state.activeNews)
 

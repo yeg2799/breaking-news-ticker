@@ -24,7 +24,13 @@ export default Vue.extend({
       breakingNews: {
         news: BreakingNewsMocks,
         config: {
-          rtl: false
+          rtl: false,
+          borderColor: '#EF7B7B',
+          label: {
+            title: 'Son Dakika',
+            bgColor: '#EF7B7B',
+            color: '#fff'
+          }
         }
       }
     }

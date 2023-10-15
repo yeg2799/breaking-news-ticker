@@ -1,7 +1,7 @@
 {
   "private":false,
-  "name": "breaking-news-ticker",
-  "version": "0.0.1",
+  "name": "v-breaking-news-ticker",
+  "version": "0.0.3",
   "description": "Vue Breaking News Ticker",
   "keywords": [
     "vue plugin",

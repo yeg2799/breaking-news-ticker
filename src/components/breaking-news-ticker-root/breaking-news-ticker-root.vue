@@ -1,16 +1,22 @@
 <template lang="pug">
-.breaking-news-ticker-root(:dir="dirAttr")
-  slot(name="title")
-  slot(name="news")
+.breaking-news-ticker-root(:dir="dirAttr" :style="{ 'border-color': config.borderColor }")
+  breaking-news-ticker-label
+  breaking-news-ticker-news
   slot(name="controls")
 </template>
 
 <script lang="ts">
 import { defineComponent, provide, computed } from 'vue-demi'
 import { useRoot } from '@/hooks/index.ts'
+import BreakingNewsTickerLabel from '../breaking-news-ticker-label/breaking-news-ticker-label.vue'
+import BreakingNewsTickerNews from '../breaking-news-ticker-news/breaking-news-ticker-news.vue'
 
 export default defineComponent({
   name: 'BreakingNewsTickerRoot',
+  components: {
+    BreakingNewsTickerLabel,
+    BreakingNewsTickerNews
+  },
   props: {
     news: {
       type: Array,

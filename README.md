@@ -22,14 +22,12 @@ yarn add v-breaking-news-ticker  # or npm i v-breaking-news-ticker
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import { BreakingNewsTickerRoot, BreakingNewsTickerTitle, BreakingNewsTickerNews, BreakingNewsTickerControls } from 'v-breaking-news-ticker'
+import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from 'v-breaking-news-ticker'
 import 'v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 
 const app = createApp(App)
 
 app.use(BreakingNewsTickerRoot);
-app.use(BreakingNewsTickerTitle);
-app.use(BreakingNewsTickerNews);
 app.use(BreakingNewsTickerControls);
 app.mount('#app')
 ```
@@ -37,7 +35,7 @@ app.mount('#app')
 #### Local Register
 ```html
 <script setup>
-import { BreakingNewsTickerRoot, BreakingNewsTickerTitle, BreakingNewsTickerNews, BreakingNewsTickerControls } from 'v-breaking-news-ticker'
+import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from 'v-breaking-news-ticker'
 import 'v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 </script>
 ```
@@ -55,8 +53,6 @@ import 'v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
   const app = Vue.createApp({})
     
   app.use(BreakingNewsTickerRoot)
-  app.use(BreakingNewsTickerTitle);
-  app.use(BreakingNewsTickerNews);
   app.use(BreakingNewsTickerControls);
   app.mount('#app')
 </script>
@@ -68,25 +64,21 @@ import 'v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 
 ```js
 import Vue from "vue";
-import { BreakingNewsTickerRoot, BreakingNewsTickerTitle, BreakingNewsTickerNews, BreakingNewsTickerControls } from "v-breaking-news-ticker";
+import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from "v-breaking-news-ticker";
 import 'v-breaking-news-ticker/dist/vue2/breaking-news-ticker.min.css'
 
 Vue.use(BreakingNewsTickerRoot);
-Vue.use(BreakingNewsTickerTitle);
-Vue.use(BreakingNewsTickerNews);
 Vue.use(BreakingNewsTickerControls);
 ```
 
 #### Local Register
 ```js
-import { BreakingNewsTickerRoot, BreakingNewsTickerTitle, BreakingNewsTickerNews, BreakingNewsTickerControls } from "v-breaking-news-ticker";
+import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from "v-breaking-news-ticker";
 import 'v-breaking-news-ticker/dist/vue2/breaking-news-ticker.min.css'
 
 export default {
   components: {
     BreakingNewsTickerRoot,
-    BreakingNewsTickerTitle,
-    BreakingNewsTickerNews,
     BreakingNewsTickerControls
   }
 }
@@ -106,8 +98,6 @@ new  Vue({
 });
 
 Vue.use(BreakingNewsTickerRoot);
-Vue.use(BreakingNewsTickerTitle);
-Vue.use(BreakingNewsTickerNews);
 Vue.use(BreakingNewsTickerControls);
 </script>
 ```
@@ -119,14 +109,6 @@ Vue.use(BreakingNewsTickerControls);
 
 ```html
 <breaking-news-ticker-root :news='your_news_arrays'>
-  <!-- Compulsory -->
-  <template #title>
-    <breaking-news-ticker-title :title='your_title' />
-  </template>
-  <!-- Compulsory -->
-  <template #news>
-    <breaking-news-ticker-news />
-  </template>
   <!-- Compulsory -->
   <template #controls>
     <breaking-news-ticker-controls />
