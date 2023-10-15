@@ -108,12 +108,42 @@ Vue.use(BreakingNewsTickerControls);
 ### Usage
 
 ```html
-<breaking-news-ticker-root :news='your_news_arrays'>
+<breaking-news-ticker-root :news='news' :config="config">
   <!-- Compulsory -->
   <template #controls>
     <breaking-news-ticker-controls />
+      <template #prevIcon>
+          // svg icon
+      </template>
+      <template #nextIcon>
+          // svg icon
+      </template>
   </template>
 </breaking-news-ticker-root>
+
+<script setup>
+  const breakingNews = {
+  news: [
+    {
+      id: 0,
+      title: 'Breaking News Title - 1'
+    },
+    {
+      id: 1,
+      title: 'Breaking News Title - 2'
+    },
+  ],
+  config: {
+    rtl: false,
+    borderColor: '#EF7B7B',
+    label: {
+      title: 'Breaking News',
+      bgColor: '#EF7B7B',
+      color: '#fff'
+    }
+  }
+}
+</script>
 ```
 
 Note that all props are compulsory.
