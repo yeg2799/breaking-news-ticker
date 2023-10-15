@@ -108,7 +108,7 @@ Vue.use(BreakingNewsTickerControls);
 ### Usage
 
 ```html
-<breaking-news-ticker-root :news='news' :config="config">
+<breaking-news-ticker-root :news="breakingNews.news" :config="breakingNews.config">
   <!-- Compulsory -->
   <template #controls>
     <breaking-news-ticker-controls />
