@@ -31,6 +31,9 @@ export default Vue.extend({
             bgColor: '#EF7B7B',
             color: '#fff'
           },
+          news: {
+            effect: 'slide-right'
+          },
           controls: {
             autoPlay: false,
             isVisible: true

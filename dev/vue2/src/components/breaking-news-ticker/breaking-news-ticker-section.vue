@@ -15,18 +15,11 @@
 import Vue from 'vue'
 
 // @ts-ignore
-import {
-  BreakingNewsTickerRoot,
-  BreakingNewsTickerLabel,
-  BreakingNewsTickerNews,
-  BreakingNewsTickerControls
-} from '../../../../../src/components'
+import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from '../../../../../src/components'
 
 export default Vue.extend({
   components: {
     BreakingNewsTickerRoot,
-    BreakingNewsTickerLabel,
-    BreakingNewsTickerNews,
     BreakingNewsTickerControls
   },
   props: {

@@ -21,6 +21,9 @@ const breakingNews = {
       bgColor: '#EF7B7B',
       color: '#fff'
     },
+    news: {
+      effect: 'slide-down'
+    },
     controls: {
       autoPlay: true,
       duration: 5000,

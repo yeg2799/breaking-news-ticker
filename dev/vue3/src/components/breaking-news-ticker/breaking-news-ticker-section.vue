@@ -14,18 +14,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
 /* @ts-ignore */
-import {
-  BreakingNewsTickerRoot,
-  BreakingNewsTickerLabel,
-  BreakingNewsTickerNews,
-  BreakingNewsTickerControls
-} from '../../../../../src/components'
+import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from '../../../../../src/components'
 
 export default defineComponent({
   components: {
     BreakingNewsTickerRoot,
-    BreakingNewsTickerLabel,
-    BreakingNewsTickerNews,
     BreakingNewsTickerControls
   },
   props: {

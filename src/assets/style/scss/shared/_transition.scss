@@ -1,0 +1,44 @@
+//slide-right animation
+.slide-right-enter-active {
+  animation: slide-right 0.5s ease-in forwards;
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+//slide-up animation
+.slide-up-enter-active {
+  animation: slide-up 0.5s ease-in forwards;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(10px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+//slide-down animation
+.slide-down-enter-active {
+  animation: slide-down 0.5s ease-in forwards;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-10px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

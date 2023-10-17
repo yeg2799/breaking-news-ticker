@@ -1,25 +1,29 @@
 <template lang="pug">
-.breaking-news-ticker-news
+transition-group.breaking-news-ticker-news(:name="newsConfig.effect" tag="div")
   .breaking-news-ticker-news__item(
     v-for="(item, index) in news"
-    :key="index"
+    v-show="index === activeNews"
+    :key="`key-${index + 1}`"
     :class="{ 'breaking-news-ticker-news__item--active': index === activeNews }"
-    :style="index !== activeNews ? 'display: none' : ''"
   )
     span {{ item.title }}
 </template>
 
 <script lang="ts">
-import { defineComponent, inject } from 'vue-demi'
+import { defineComponent, inject, computed } from 'vue-demi'
 
 export default defineComponent({
   name: 'BreakingNewsTickerNews',
   setup() {
-    const { news, activeNews } = inject('root')
+    const { news, activeNews, config } = inject('root')
+    const newsConfig = computed(() => config.value.news)
+
+    console.log(newsConfig.value)
 
     return {
       news,
-      activeNews
+      activeNews,
+      newsConfig
     }
   }
 })
