@@ -28,13 +28,14 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { setNews, setConfig, setActiveNews, news, config, activeNews } = useRoot()
+    const { setNews, setConfig, setActiveNews, news, config, activeNews, resetActiveNews } = useRoot()
     setConfig(props.config)
     // Provide
     provide('root', {
       setNews,
       setConfig,
       setActiveNews,
+      resetActiveNews,
       news,
       config,
       activeNews

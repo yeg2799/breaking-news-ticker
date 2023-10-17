@@ -14,19 +14,33 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, computed } from 'vue-demi'
+import { defineComponent, inject, computed, onMounted } from 'vue-demi'
 import { processEnum } from '@/enums/index.ts'
 
 export default defineComponent({
   name: 'BreakingNewsTickerControls',
   setup() {
-    const { setActiveNews, activeNews, news } = inject('root')
+    const { setActiveNews, activeNews, news, resetActiveNews, config } = inject('root')
+    const controlsConfig = computed(() => config.value.controls)
     const isFirstNews = computed(() => activeNews.value === 0)
     const isLastNews = computed(() => activeNews.value === news.value.length - 1)
 
     const handleClicked = (process: '') => {
       setActiveNews(process)
     }
+
+    onMounted(() => {
+      // autoPlay
+      if (controlsConfig.value.autoPlay) {
+        setInterval(() => {
+          if (isLastNews.value) {
+            resetActiveNews()
+          } else {
+            handleClicked(processEnum.NEXT)
+          }
+        }, controlsConfig.value.duration)
+      }
+    })
 
     return {
       isFirstNews,

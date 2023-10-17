@@ -4,6 +4,7 @@
     v-for="(item, index) in news"
     :key="index"
     :class="{ 'breaking-news-ticker-news__item--active': index === activeNews }"
+    :style="index !== activeNews ? 'display: none' : ''"
   )
     span {{ item.title }}
 </template>

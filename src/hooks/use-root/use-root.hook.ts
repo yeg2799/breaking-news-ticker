@@ -30,6 +30,10 @@ export default () => {
     }
   }
 
+  const resetActiveNews = () => {
+    state.activeNews = 0
+  }
+
   // Readables
   const news = computed(() => state.news)
   const config = computed(() => state.config)
@@ -42,6 +46,7 @@ export default () => {
     setNews,
     setConfig,
     setActiveNews,
+    resetActiveNews,
     // Readables
     news,
     config,

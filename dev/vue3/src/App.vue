@@ -17,9 +17,14 @@ const breakingNews = {
     rtl: false,
     borderColor: '#EF7B7B',
     label: {
-      title: 'Son Dakika',
+      title: 'Breaking News',
       bgColor: '#EF7B7B',
       color: '#fff'
+    },
+    controls: {
+      autoPlay: true,
+      duration: 5000,
+      isVisible: true
     }
   }
 }

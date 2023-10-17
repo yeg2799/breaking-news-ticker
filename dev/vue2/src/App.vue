@@ -27,9 +27,13 @@ export default Vue.extend({
           rtl: false,
           borderColor: '#EF7B7B',
           label: {
-            title: 'Son Dakika',
+            title: 'Breaking News',
             bgColor: '#EF7B7B',
             color: '#fff'
+          },
+          controls: {
+            autoPlay: false,
+            isVisible: true
           }
         }
       }
