@@ -1,4 +1,4 @@
-import { EffectEnums } from './effects.enum.types.js'
+import { EffectEnums } from './effects.enum.types.ts'
 
 export default Object.freeze({
   SLIDERIGHT: EffectEnums.SLIDERIGHT,
