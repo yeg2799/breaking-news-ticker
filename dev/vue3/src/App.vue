@@ -4,34 +4,47 @@
   breaking-news-ticker-section(:news="breakingNews.news" :config="breakingNews.config")
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 /* @ts-ignore */
+import { defineComponent } from 'vue'
 import AppHeader from './components/header/app-header.vue'
 import BreakingNewsTickerSection from './components/breaking-news-ticker/breaking-news-ticker-section.vue'
 import { BreakingNewsMocks } from '../../../mock/breaking-news.mock'
 import '../../../src/assets/style/scss/app.scss'
 
-const breakingNews = {
-  news: BreakingNewsMocks,
-  config: {
-    rtl: false,
-    borderColor: '#EF7B7B',
-    label: {
-      title: 'Breaking News',
-      bgColor: '#EF7B7B',
-      color: '#fff'
-    },
-    news: {
-      effect: 'slide-down'
-    },
-    controls: {
-      autoPlay: true,
-      duration: 5000,
-      isVisible: true,
-      bgColor: '#f6f6f6'
+export default defineComponent({
+  components: {
+    AppHeader,
+    BreakingNewsTickerSection
+  },
+  setup() {
+    const breakingNews = {
+      news: BreakingNewsMocks,
+      config: {
+        rtl: false,
+        borderColor: '#EF7B7B',
+        label: {
+          title: 'Breaking News',
+          bgColor: '#EF7B7B',
+          color: '#fff'
+        },
+        news: {
+          effect: 'slide-down'
+        },
+        controls: {
+          autoPlay: true,
+          duration: 5000,
+          isVisible: true,
+          bgColor: '#f6f6f6'
+        }
+      }
+    }
+
+    return {
+      breakingNews
     }
   }
-}
+})
 </script>
 
 <style lang="scss">

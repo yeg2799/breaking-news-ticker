@@ -12,9 +12,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue-demi'
+import { defineComponent } from 'vue'
 /* @ts-ignore */
-import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from '../../../../../src/components'
+import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from 'v-breaking-news-ticker'
+import '/node_modules/v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 
 export default defineComponent({
   components: {
