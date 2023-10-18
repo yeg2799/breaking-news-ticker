@@ -1,20 +1,20 @@
 const breakingNews = [
   {
     id: 0,
-    title: 'Şok Şok Messi AdanaDemirsporda'
+    title: 'Breaking News Title 1',
   },
   {
     id: 1,
-    title: 'Adanada kaza'
+    title: 'Breaking News Title 2',
   },
   {
     id: 3,
-    title: 'Mersinde yük treni kaza yaptı'
+    title: 'Breaking News Title 3',
   },
   {
     id: 4,
-    title: 'Ünlü şarkıcı o kadın benim dedi'
-  }
-]
+    title: 'Breaking News Title 4',
+  },
+];
 
-export { breakingNews as BreakingNewsMocks }
+export { breakingNews as BreakingNewsMocks };

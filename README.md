@@ -8,6 +8,10 @@
 
 ## Demo
 
+<p align="center">
+  <a href="https://breaking-news-ticker.vercel.app/" target="_blank">Demo</a>
+</p>
+
 ## Setup
 
 
