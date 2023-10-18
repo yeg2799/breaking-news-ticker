@@ -132,6 +132,10 @@ Vue.use(BreakingNewsTickerControls);
       id: 1,
       title: 'Breaking News Title - 2'
     },
+    {
+      id: 2,
+      title: 'Breaking News Title - 3'
+    },
   ],
   config: {
     rtl: false,
@@ -140,6 +144,14 @@ Vue.use(BreakingNewsTickerControls);
       title: 'Breaking News',
       bgColor: '#EF7B7B',
       color: '#fff'
+    },
+    news: {
+      effect: 'slide-down' //slide-down - slide-up - slide-right
+    },
+    controls: {
+      autoPlay: true,
+      duration: 5000,
+      bgColor: '#f6f6f6' 
     }
   }
 }
@@ -151,4 +163,3 @@ Note that all props are compulsory.
 | Name             | Type          | Default            | Description                                                  |
 | ---------------- | ------------- | ------------------ | ------------------------------------------------------------ |
 | news             | Array         | []                 | For the news you want to show                                |
-| title            | String        | ''                 | For your title                                               |

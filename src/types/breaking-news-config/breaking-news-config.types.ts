@@ -8,6 +8,7 @@ interface BreakingNewsControlsConfig {
   autoPlay?: boolean
   duration?: Number
   isVisible?: boolean
+  bgColor?: String
 }
 
 interface BreakingNewsItemConfig {

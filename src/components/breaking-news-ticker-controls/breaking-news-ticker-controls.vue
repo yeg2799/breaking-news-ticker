@@ -2,12 +2,14 @@
 .breaking-news-ticker-controls
   button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--left-button(
     :disabled="isFirstNews"
+    :style="{ backgroundColor: controlsConfig.bgColor }"
     @click="handleClicked(processEnum.PREV)"
   )
     slot(name="prevIcon")
   //- button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--mid-button(@click="handleClicked('pause')") pause
   button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--right-button(
     :disabled="isLastNews"
+    :style="{ backgroundColor: controlsConfig.bgColor }"
     @click="handleClicked(processEnum.NEXT)"
   )
     slot(name="nextIcon")
@@ -38,7 +40,7 @@ export default defineComponent({
           } else {
             handleClicked(processEnum.NEXT)
           }
-        }, controlsConfig.value.duration)
+        }, controlsConfig.value.duration || 2000)
       }
     })
 
@@ -47,7 +49,8 @@ export default defineComponent({
       isLastNews,
       activeNews,
       handleClicked,
-      processEnum
+      processEnum,
+      controlsConfig
     }
   }
 })

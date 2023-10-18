@@ -27,7 +27,8 @@ const breakingNews = {
     controls: {
       autoPlay: true,
       duration: 5000,
-      isVisible: true
+      isVisible: true,
+      bgColor: '#f6f6f6'
     }
   }
 }
