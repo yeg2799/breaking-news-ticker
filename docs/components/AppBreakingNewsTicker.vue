@@ -1,32 +1,17 @@
 <template>
-  <breaking-news-ticker-root :news="breakingNews.news" :config="breakingNews.config">
-    <template #controls>
-      <breaking-news-ticker-controls>
-        <template #prevIcon>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24">
-            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentcolor" d="M15 18L9 12L15 6"></path>
-          </svg>
-        </template>
-        <template #nextIcon>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24">
-            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentcolor" d="M9 18L15 12L9 6"></path>
-          </svg>
-        </template>
-      </breaking-news-ticker-controls>
-    </template>
-  </breaking-news-ticker-root>
+  <breaking-news-ticker :news="breakingNews.news" :config="breakingNews.config">
+  </breaking-news-ticker>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from 'v-breaking-news-ticker'
+import { BreakingNewsTicker } from 'v-breaking-news-ticker'
 import '/node_modules/v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 import { BreakingNewsMocks } from '../../mock/breaking-news.mock'
 
 export default defineComponent({
   components: {
-    BreakingNewsTickerRoot,
-    BreakingNewsTickerControls
+    BreakingNewsTicker,
   },
   setup() {
     const breakingNews = {

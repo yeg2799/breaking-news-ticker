@@ -1,5 +1,5 @@
 <template lang="pug">
-.breaking-news-ticker-root(:dir="dirAttr" :style="{ 'border-color': config.borderColor }")
+.breaking-news-ticker(:dir="dirAttr" :style="{ 'border-color': config.borderColor }")
   breaking-news-ticker-label
   breaking-news-ticker-news
   breaking-news-ticker-controls
@@ -13,7 +13,7 @@ import BreakingNewsTickerNews from '../breaking-news-ticker-news/breaking-news-t
 import BreakingNewsTickerControls from '../breaking-news-ticker-controls/breaking-news-ticker-controls.vue'
 
 export default defineComponent({
-  name: 'BreakingNewsTickerRoot',
+  name: 'BreakingNewsTicker',
   components: {
     BreakingNewsTickerLabel,
     BreakingNewsTickerNews,
