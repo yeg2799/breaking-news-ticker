@@ -29,9 +29,11 @@ export default defineComponent({
           color: '#fff'
         },
         news: {
-          effect: 'slide-down'
+          animation: {
+            effect: 'slide-down'
+          }
         },
-        controls: {
+        navigation: {
           autoPlay: true,
           duration: 5000,
           isVisible: true,

@@ -26,20 +26,19 @@ yarn add v-breaking-news-ticker  # or npm i v-breaking-news-ticker
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from 'v-breaking-news-ticker'
+import { BreakingNewsTicker } from 'v-breaking-news-ticker'
 import 'v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 
 const app = createApp(App)
 
-app.use(BreakingNewsTickerRoot);
-app.use(BreakingNewsTickerControls);
+app.use(BreakingNewsTicker);
 app.mount('#app')
 ```
 
 #### Local Register
 ```html
 <script setup>
-import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from 'v-breaking-news-ticker'
+import { BreakingNewsTicker } from 'v-breaking-news-ticker'
 import 'v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 </script>
 ```
@@ -56,8 +55,7 @@ import 'v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 <script>
   const app = Vue.createApp({})
     
-  app.use(BreakingNewsTickerRoot)
-  app.use(BreakingNewsTickerControls);
+  app.use(BreakingNewsTicker)
   app.mount('#app')
 </script>
 ```
@@ -68,22 +66,20 @@ import 'v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
 
 ```js
 import Vue from "vue";
-import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from "v-breaking-news-ticker";
+import { BreakingNewsTicker } from "v-breaking-news-ticker";
 import 'v-breaking-news-ticker/dist/vue2/breaking-news-ticker.min.css'
 
-Vue.use(BreakingNewsTickerRoot);
-Vue.use(BreakingNewsTickerControls);
+Vue.use(BreakingNewsTicker);
 ```
 
 #### Local Register
 ```js
-import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from "v-breaking-news-ticker";
+import { BreakingNewsTicker } from "v-breaking-news-ticker";
 import 'v-breaking-news-ticker/dist/vue2/breaking-news-ticker.min.css'
 
 export default {
   components: {
-    BreakingNewsTickerRoot,
-    BreakingNewsTickerControls
+    BreakingNewsTicker,
   }
 }
 ```
@@ -101,8 +97,7 @@ new  Vue({
   el: "#app"
 });
 
-Vue.use(BreakingNewsTickerRoot);
-Vue.use(BreakingNewsTickerControls);
+Vue.use(BreakingNewsTicker);
 </script>
 ```
 &nbsp;
@@ -112,18 +107,8 @@ Vue.use(BreakingNewsTickerControls);
 ### Usage
 
 ```html
-<breaking-news-ticker-root :news="breakingNews.news" :config="breakingNews.config">
-  <!-- Compulsory -->
-  <template #controls>
-    <breaking-news-ticker-controls />
-      <template #prevIcon>
-          // svg icon
-      </template>
-      <template #nextIcon>
-          // svg icon
-      </template>
-  </template>
-</breaking-news-ticker-root>
+<breaking-news-ticker :news="breakingNews.news" :config="breakingNews.config">
+</breaking-news-ticker>
 
 <script setup>
   const breakingNews = {
@@ -152,7 +137,7 @@ Vue.use(BreakingNewsTickerControls);
     news: {
       effect: 'slide-down' //slide-down - slide-up - slide-right
     },
-    controls: {
+    navigation: {
       autoPlay: true,
       duration: 5000,
       bgColor: '#f6f6f6' 

@@ -1,5 +1,5 @@
 <template lang="pug">
-transition-group.breaking-news-ticker-news(:name="newsConfig.effect" tag="div")
+transition-group.breaking-news-ticker-news(:name="newsConfig.animation.effect" tag="div")
   .breaking-news-ticker-news__item(
     v-for="(item, index) in news"
     v-show="index === activeNews"
@@ -17,8 +17,6 @@ export default defineComponent({
   setup() {
     const { news, activeNews, config } = inject('root')
     const newsConfig = computed(() => config.value.news)
-
-    console.log(newsConfig.value)
 
     return {
       news,

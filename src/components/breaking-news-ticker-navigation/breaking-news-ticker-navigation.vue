@@ -1,15 +1,15 @@
 <template lang="pug">
-.breaking-news-ticker-controls
-  button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--left-button(
+.breaking-news-ticker-navigation
+  button.breaking-news-ticker-navigation--button.breaking-news-ticker-navigation--left-button(
     :disabled="isFirstNews"
-    :style="{ backgroundColor: controlsConfig.bgColor }"
+    :style="{ backgroundColor: navigationConfig.bgColor }"
     @click="handleClicked(processEnum.PREV)"
   )
     svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24")
       path(stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentcolor" d="M15 18L9 12L15 6")
-  button.breaking-news-ticker-controls--button.breaking-news-ticker-controls--right-button(
+  button.breaking-news-ticker-navigation--button.breaking-news-ticker-navigation--right-button(
     :disabled="isLastNews"
-    :style="{ backgroundColor: controlsConfig.bgColor }"
+    :style="{ backgroundColor: navigationConfig.bgColor }"
     @click="handleClicked(processEnum.NEXT)"
   )
     svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24")
@@ -21,10 +21,10 @@ import { defineComponent, inject, computed, onMounted } from 'vue-demi'
 import { processEnum } from '@/enums/index.ts'
 
 export default defineComponent({
-  name: 'BreakingNewsTickerControls',
+  name: 'BreakingNewsTickerNavigation',
   setup() {
     const { setActiveNews, activeNews, news, resetActiveNews, config } = inject('root')
-    const controlsConfig = computed(() => config.value.controls)
+    const navigationConfig = computed(() => config.value.navigation)
     const isFirstNews = computed(() => activeNews.value === 0)
     const isLastNews = computed(() => activeNews.value === news.value.length - 1)
     let interval;
@@ -39,7 +39,7 @@ export default defineComponent({
 
     onMounted(() => {
       // autoPlay
-      if (controlsConfig.value.autoPlay) {
+      if (navigationConfig.value.autoPlay) {
         createInterval();
       }
     })
@@ -51,7 +51,7 @@ export default defineComponent({
         } else {
           handleClicked(processEnum.NEXT)
         }
-      }, controlsConfig.value.duration || 2000)
+      }, navigationConfig.value.duration || 2000)
     }
 
     return {
@@ -60,12 +60,12 @@ export default defineComponent({
       activeNews,
       handleClicked,
       processEnum,
-      controlsConfig
+      navigationConfig
     }
   }
 })
 </script>
 
 <style lang="scss">
-@import './breaking-news-ticker-controls.scss';
+@import './breaking-news-ticker-navigation.scss';
 </style>

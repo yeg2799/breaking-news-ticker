@@ -34,7 +34,7 @@ export default Vue.extend({
           news: {
             effect: 'slide-right'
           },
-          controls: {
+          navigation: {
             autoPlay: false,
             isVisible: true
           }

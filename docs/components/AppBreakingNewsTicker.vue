@@ -27,7 +27,7 @@ export default defineComponent({
         news: {
           effect: 'slide-down'
         },
-        controls: {
+        navigation: {
           autoPlay: true,
           duration: 5000,
           isVisible: true,

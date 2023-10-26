@@ -4,7 +4,7 @@ interface BreakingNewsLabelConfig {
   color?: String
 }
 
-interface BreakingNewsControlsConfig {
+interface BreakingNewsNavigationConfig {
   autoPlay?: boolean
   duration?: Number
   isVisible?: boolean
@@ -12,7 +12,9 @@ interface BreakingNewsControlsConfig {
 }
 
 interface BreakingNewsItemConfig {
-  effect?: String
+  animation?: {
+    effect?: String
+  }
 }
 
 export interface BreakingNewsConfig {
@@ -20,5 +22,5 @@ export interface BreakingNewsConfig {
   borderColor?: String
   label: BreakingNewsLabelConfig
   news: BreakingNewsItemConfig
-  controls: BreakingNewsControlsConfig
+  navigation: BreakingNewsNavigationConfig
 }
