@@ -1,26 +1,17 @@
 <template lang="pug">
 .breaking-news-ticker-section
   breaking-news-ticker-root(:news="news" :config="config")
-    template(#controls)
-      breaking-news-ticker-controls
-        template(#prevIcon)
-          svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24")
-            path(stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentcolor" d="M15 18L9 12L15 6")
-        template(#nextIcon)
-          svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24")
-            path(stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentcolor" d="M9 18L15 12L9 6")
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue-demi'
 /* @ts-ignore */
-import { BreakingNewsTickerRoot, BreakingNewsTickerControls } from 'v-breaking-news-ticker'
-import '/node_modules/v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
-
+// import BreakingNewsTickerRoot from 'v-breaking-news-ticker'
+// import '/node_modules/v-breaking-news-ticker/dist/vue3/breaking-news-ticker.min.css'
+import BreakingNewsTickerRoot from '../../../../../src/components/breaking-news-ticker-root/breaking-news-ticker-root.vue'
 export default defineComponent({
   components: {
     BreakingNewsTickerRoot,
-    BreakingNewsTickerControls
   },
   props: {
     news: {

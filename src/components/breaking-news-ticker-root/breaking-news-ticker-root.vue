@@ -2,7 +2,7 @@
 .breaking-news-ticker-root(:dir="dirAttr" :style="{ 'border-color': config.borderColor }")
   breaking-news-ticker-label
   breaking-news-ticker-news
-  slot(name="controls")
+  breaking-news-ticker-controls
 </template>
 
 <script lang="ts">
@@ -10,12 +10,14 @@ import { defineComponent, provide, computed } from 'vue-demi'
 import { useRoot } from '@/hooks/index.ts'
 import BreakingNewsTickerLabel from '../breaking-news-ticker-label/breaking-news-ticker-label.vue'
 import BreakingNewsTickerNews from '../breaking-news-ticker-news/breaking-news-ticker-news.vue'
+import BreakingNewsTickerControls from '../breaking-news-ticker-controls/breaking-news-ticker-controls.vue'
 
 export default defineComponent({
   name: 'BreakingNewsTickerRoot',
   components: {
     BreakingNewsTickerLabel,
-    BreakingNewsTickerNews
+    BreakingNewsTickerNews,
+    BreakingNewsTickerControls
   },
   props: {
     news: {
