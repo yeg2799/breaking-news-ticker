@@ -1,5 +1,5 @@
 <template lang="pug">
-transition-group.breaking-news-ticker-news#container(:name="newsConfig.animation.effect" tag="div" :class="[effectClass]" :style="[effectStyle]")
+transition-group.breaking-news-ticker-news#container(:name="effectName" tag="div" :class="[effectClass]" :style="[effectStyle]")
   .breaking-news-ticker-news__item(
     v-for="(item, index) in news"
     v-show="index === activeNews"
@@ -10,54 +10,41 @@ transition-group.breaking-news-ticker-news#container(:name="newsConfig.animation
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, inject, computed, onMounted } from 'vue-demi'
+import {  defineComponent, inject, computed, onMounted } from 'vue-demi'
+import { useEffect } from '@/hooks'
 
 export default defineComponent({
   name: 'BreakingNewsTickerNews',
   setup() {
     const { news, activeNews, config } = inject('root')
-    const newsConfig = computed(() => config.value.news)
-    const left = ref(0);
+    const { leftStyle, scrollEffect } = useEffect();
+    const effectName = computed(() => config.value.news?.animation?.effect || null)
     const effectClass = computed(() => {
-      const effectName = newsConfig.value.animation.effect;
-
-      if(effectName) {
-        return `breaking-news-ticker-news--${effectName}`
+      if(effectName.value) {
+        return `breaking-news-ticker-news--${effectName.value}`
       }
     })
 
     const effectStyle = computed(() => {
-      const effectName = newsConfig.value.animation.effect;
-
-      if(effectName === 'scroll') {
-        return { left: `${left.value}px`}
+      if(effectName.value === 'scroll') {
+        return { left: `${leftStyle.value}px`}
       }
     })
 
     onMounted(() => {
-      setInterval(() => {
-        const container = document.getElementById('container');
-        const firstChild = document.querySelector('.breaking-news-ticker-news__item');
 
-        const moveToAppendChild = () => {
-          container?.appendChild(firstChild)
-        }
+      //scroll
+      if(effectName.value === 'scroll') {
+        scrollEffect();
+      }
 
-        if(-left.value < firstChild?.clientWidth) {
-          left.value -= 1;
-        } else {
-          left.value = 0;
-          moveToAppendChild()
-        }
-      },10)
     })
 
     return {
       news,
       activeNews,
-      newsConfig,
+      effectName,
       effectClass,
-      left,
       effectStyle
     }
   }
