@@ -135,7 +135,9 @@ Vue.use(BreakingNewsTicker);
       color: '#fff'
     },
     news: {
-      effect: 'slide-down' //slide-down - slide-up - slide-right
+      animation: {
+        effect: 'slide-down' //slide-down - slide-up - slide-right - scroll
+      }
     },
     navigation: {
       autoPlay: true,
