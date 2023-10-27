@@ -11,7 +11,7 @@ import { defineComponent } from 'vue-demi'
 import BreakingNewsTicker from '../../../../../src/components/breaking-news-ticker/breaking-news-ticker.vue'
 export default defineComponent({
   components: {
-    BreakingNewsTicker,
+    BreakingNewsTicker
   },
   props: {
     news: {

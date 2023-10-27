@@ -8345,10 +8345,10 @@ uvu@^0.5.0:
     kleur "^4.0.3"
     sade "^1.7.3"
 
-v-breaking-news-ticker@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/v-breaking-news-ticker/-/v-breaking-news-ticker-1.1.1.tgz#9fcdf8e140246837693d2343520963e7f2aa1301"
-  integrity sha512-BZHDe4oyjqp7SKgXH68DsVt+hJcMZpZvCLT69WZn/eDyZDbWnchrVqNUgfgu37kfGruoB0frcAB38/oFe6d6Bg==
+v-breaking-news-ticker@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/v-breaking-news-ticker/-/v-breaking-news-ticker-1.1.2.tgz#bd0eae68e1f3d3ae1613e6513c6e46d8f39494ea"
+  integrity sha512-h5v/QPJAFc5IBJD4eHvwjQj3q1VLdtdQPj9peVTfcTXkUeG4fCkH4un7fEgs6VTP299sc4bG5/ydPljy6g9aTA==
   dependencies:
     vue-demi latest
 

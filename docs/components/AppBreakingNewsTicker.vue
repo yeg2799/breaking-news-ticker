@@ -25,7 +25,9 @@ export default defineComponent({
           color: '#fff'
         },
         news: {
-          effect: 'slide-down'
+          animation: {
+            effect: 'scroll'
+          }
         },
         navigation: {
           autoPlay: true,

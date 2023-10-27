@@ -11,7 +11,7 @@ import { BreakingNewsTicker } from '../../../../../src/components'
 
 export default Vue.extend({
   components: {
-    BreakingNewsTicker,
+    BreakingNewsTicker
   },
   props: {
     news: {
