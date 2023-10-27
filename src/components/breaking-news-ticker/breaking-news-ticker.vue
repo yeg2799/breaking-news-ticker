@@ -1,7 +1,8 @@
 <template lang="pug">
 .breaking-news-ticker(:dir="dirAttr" :style="{ 'border-color': config.borderColor }")
   breaking-news-ticker-label
-  breaking-news-ticker-news
+  .breaking-news-ticker__wrapper
+    breaking-news-ticker-news
   breaking-news-ticker-navigation
 </template>
 

@@ -1,6 +1,8 @@
 .breaking-news-ticker-navigation {
   display: flex;
   height: 100%;
+  position: absolute;
+  right: 0;
 
   &--button {
     height: 100%;

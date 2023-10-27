@@ -45,13 +45,13 @@ export default defineComponent({
     })
 
     const createInterval = () => {
-      interval = setInterval(() => {
-        if (isLastNews.value) {
-          resetActiveNews()
-        } else {
-          handleClicked(processEnum.NEXT)
-        }
-      }, navigationConfig.value.duration || 2000)
+      // interval = setInterval(() => {
+      //   if (isLastNews.value) {
+      //     resetActiveNews()
+      //   } else {
+      //     handleClicked(processEnum.NEXT)
+      //   }
+      // }, navigationConfig.value.duration || 2000)
     }
 
     return {

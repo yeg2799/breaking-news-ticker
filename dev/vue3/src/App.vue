@@ -30,7 +30,7 @@ export default defineComponent({
         },
         news: {
           animation: {
-            effect: 'slide-down'
+            effect: 'scroll'
           }
         },
         navigation: {

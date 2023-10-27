@@ -1,19 +1,19 @@
 const breakingNews = [
   {
     id: 0,
-    title: 'Breaking News Title 1',
+    title: 'Alexis Mac Allister: Liverpool sign Brighton Argentina midfielder for £35m - 1',
   },
   {
     id: 1,
-    title: 'Breaking News Title 2',
+    title: 'Alexis Mac Allister: Liverpool sign Brighton Argentina midfielder for £35m - 2',
   },
   {
     id: 3,
-    title: 'Breaking News Title 3',
+    title: 'Alexis Mac Allister: Liverpool sign Brighton Argentina midfielder for £35m - 3',
   },
   {
     id: 4,
-    title: 'Breaking News Title 4',
+    title: 'Alexis Mac Allister: Liverpool sign Brighton Argentina midfielder for £35m - 4',
   },
 ];
 

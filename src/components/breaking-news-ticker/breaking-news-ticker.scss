@@ -5,7 +5,12 @@
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 800px;
   height: 40px;
   border: 1px solid;
+
+  &__wrapper {
+    width: 100%;
+    position: relative;
+    overflow: auto;
+  }
 }

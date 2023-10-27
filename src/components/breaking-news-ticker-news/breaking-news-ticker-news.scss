@@ -1,4 +1,16 @@
 .breaking-news-ticker-news {
   width: 100%;
   padding-left: 10px;
+
+  &--scroll {
+    display: flex;
+    position: relative;
+    scroll-behavior: smooth;
+
+    .breaking-news-ticker-news__item {
+      display: block !important;
+      white-space: nowrap;
+      padding: 0 10px;
+    }
+  }
 }
