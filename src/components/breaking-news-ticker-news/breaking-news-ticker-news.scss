@@ -3,14 +3,14 @@
   padding-left: 10px;
 
   &--scroll {
-    display: flex;
     position: relative;
+    display: flex;
     scroll-behavior: smooth;
 
     .breaking-news-ticker-news__item {
       display: block !important;
-      white-space: nowrap;
       padding: 0 10px;
+      white-space: nowrap;
     }
   }
 }

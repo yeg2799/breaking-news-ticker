@@ -1,5 +1,5 @@
 <template lang="pug">
-transition-group.breaking-news-ticker-news#container(:name="effectName" tag="div" :class="[effectClass]" :style="[effectStyle]")
+transition-group#container.breaking-news-ticker-news(:name="effectName" tag="div" :class="[effectClass]" :style="[effectStyle]")
   .breaking-news-ticker-news__item(
     v-for="(item, index) in news"
     v-show="index === activeNews"
@@ -10,34 +10,33 @@ transition-group.breaking-news-ticker-news#container(:name="effectName" tag="div
 </template>
 
 <script lang="ts">
-import {  defineComponent, inject, computed, onMounted } from 'vue-demi'
-import { useEffect } from '@/hooks'
+import { defineComponent, inject, computed, onMounted } from 'vue-demi'
+import { useEffect } from '@/hooks/index.ts'
+import { effectEnum } from '@/enums/index.ts'
 
 export default defineComponent({
   name: 'BreakingNewsTickerNews',
   setup() {
     const { news, activeNews, config } = inject('root')
-    const { leftStyle, scrollEffect } = useEffect();
+    const { leftStyle, scrollEffect } = useEffect()
     const effectName = computed(() => config.value.news?.animation?.effect || null)
     const effectClass = computed(() => {
-      if(effectName.value) {
+      if (effectName.value) {
         return `breaking-news-ticker-news--${effectName.value}`
       }
     })
 
     const effectStyle = computed(() => {
-      if(effectName.value === 'scroll') {
-        return { left: `${leftStyle.value}px`}
+      if (effectName.value === effectEnum.SCROLL) {
+        return { left: `${leftStyle.value}px` }
       }
     })
 
     onMounted(() => {
-
       //scroll
-      if(effectName.value === 'scroll') {
-        scrollEffect();
+      if (effectName.value === effectEnum.SCROLL) {
+        scrollEffect()
       }
-
     })
 
     return {

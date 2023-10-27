@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent, inject, computed, onMounted } from 'vue-demi'
-import { processEnum } from '@/enums/index.ts'
+import { processEnum, effectEnum } from '@/enums/index.ts'
 
 export default defineComponent({
   name: 'BreakingNewsTickerNavigation',
@@ -27,31 +27,32 @@ export default defineComponent({
     const navigationConfig = computed(() => config.value.navigation)
     const isFirstNews = computed(() => activeNews.value === 0)
     const isLastNews = computed(() => activeNews.value === news.value.length - 1)
-    let interval;
+    const isScrollEffect = computed(() => config.value.news?.animation?.effect === effectEnum.SCROLL)
+    let interval
 
     const handleClicked = async (process: '') => {
-      await clearInterval(interval);
+      await clearInterval(interval)
 
       await setActiveNews(process)
 
-      await createInterval();
+      await createInterval()
     }
 
     onMounted(() => {
       // autoPlay
-      if (navigationConfig.value.autoPlay) {
-        createInterval();
+      if (navigationConfig.value.autoPlay && !isScrollEffect.value) {
+        createInterval()
       }
     })
 
     const createInterval = () => {
-      // interval = setInterval(() => {
-      //   if (isLastNews.value) {
-      //     resetActiveNews()
-      //   } else {
-      //     handleClicked(processEnum.NEXT)
-      //   }
-      // }, navigationConfig.value.duration || 2000)
+      interval = setInterval(() => {
+        if (isLastNews.value) {
+          resetActiveNews()
+        } else {
+          handleClicked(processEnum.NEXT)
+        }
+      }, navigationConfig.value.duration || 2000)
     }
 
     return {
