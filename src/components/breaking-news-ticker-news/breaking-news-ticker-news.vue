@@ -1,12 +1,16 @@
 <template lang="pug">
 transition-group#container.breaking-news-ticker-news(:name="effectName" tag="div" :class="[effectClass]" :style="[effectStyle]")
-  .breaking-news-ticker-news__item(
-    v-for="(item, index) in news"
-    v-show="index === activeNews"
-    :key="`key-${index + 1}`"
-    :class="{ 'breaking-news-ticker-news__item--active': index === activeNews }"
-  )
-    span {{ item.title }}
+  template(v-if="effectName === effectEnum.SCROLL")
+    .breaking-news-ticker-news__item(v-for="(item, index) in repeatedNewsData" :key="`key-${index + 1}`" :class="[dublicateClass(index)]")
+      span {{ item.title }}
+  template(v-else)
+    .breaking-news-ticker-news__item(
+      v-for="(item, index) in news"
+      v-show="index === activeNews"
+      :key="`key-${index + 1}`"
+      :class="[activeClass(index, activeNews)]"
+    )
+      span {{ item.title }}
 </template>
 
 <script lang="ts">
@@ -17,7 +21,7 @@ import { effectEnum } from '@/enums/index.ts'
 export default defineComponent({
   name: 'BreakingNewsTickerNews',
   setup() {
-    const { news, activeNews, config } = inject('root')
+    const { news, repeatedNewsData, activeNews, config } = inject('root')
     const { leftStyle, scrollEffect } = useEffect()
     const effectName = computed(() => config.value.news?.animation?.effect || null)
     const effectClass = computed(() => {
@@ -39,12 +43,24 @@ export default defineComponent({
       }
     })
 
+    const activeClass = (index, activeNews) => {
+      return { 'breaking-news-ticker-news__item--active': index === activeNews }
+    }
+
+    const dublicateClass = index => {
+      return { 'breaking-news-ticker-news__dublicate-item': index > news.value.length - 1 }
+    }
+
     return {
       news,
+      repeatedNewsData,
       activeNews,
       effectName,
       effectClass,
-      effectStyle
+      effectStyle,
+      activeClass,
+      dublicateClass,
+      effectEnum
     }
   }
 })

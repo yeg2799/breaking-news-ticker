@@ -4,6 +4,7 @@ import { processEnum } from '@/enums/index.ts'
 export default () => {
   const state = reactive({
     news: [],
+    repeatedNewsData: [],
     config: null,
     activeNews: 0
   })
@@ -11,6 +12,7 @@ export default () => {
   //Methods
   const setNews = (news: []) => {
     state.news = news
+    state.repeatedNewsData = [...news, ...news]
   }
 
   const setConfig = (config: {}) => {
@@ -36,6 +38,7 @@ export default () => {
 
   // Readables
   const news = computed(() => state.news)
+  const repeatedNewsData = computed(() => state.repeatedNewsData)
   const config = computed(() => state.config)
   const activeNews = computed(() => state.activeNews)
 
@@ -49,6 +52,7 @@ export default () => {
     resetActiveNews,
     // Readables
     news,
+    repeatedNewsData,
     config,
     activeNews
   }

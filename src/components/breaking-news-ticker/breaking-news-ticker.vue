@@ -33,7 +33,7 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { setNews, setConfig, setActiveNews, news, config, activeNews, resetActiveNews } = useRoot()
+    const { setNews, setConfig, setActiveNews, news, repeatedNewsData, config, activeNews, resetActiveNews } = useRoot()
     const hidingNavigation = computed(() => !config.value.news.animation.effect.includes(effectEnum.SCROLL))
     setConfig(props.config)
     // Provide
@@ -43,6 +43,7 @@ export default defineComponent({
       setActiveNews,
       resetActiveNews,
       news,
+      repeatedNewsData,
       config,
       activeNews
     })

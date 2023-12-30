@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "v-breaking-news-ticker": "^1.0.1",
+    "v-breaking-news-ticker": "^1.1.2",
     "vue": "^3.3.4"
   },
   "devDependencies": {

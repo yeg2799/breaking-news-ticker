@@ -32,7 +32,9 @@ export default Vue.extend({
             color: '#fff'
           },
           news: {
-            effect: 'slide-right'
+            animation: {
+              effect: 'slide-right'
+            }
           },
           navigation: {
             autoPlay: false,
