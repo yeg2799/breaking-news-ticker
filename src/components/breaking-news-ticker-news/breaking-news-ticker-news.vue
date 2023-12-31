@@ -22,7 +22,7 @@ export default defineComponent({
   name: 'BreakingNewsTickerNews',
   setup() {
     const { news, repeatedNewsData, activeNews, config } = inject('root')
-    const { leftStyle, scrollEffect } = useEffect()
+    const { directionStyle, scrollEffect } = useEffect()
 
     const effectName = computed(() => config.value.news?.animation?.effect || null)
     const effectClass = computed(() => {
@@ -30,10 +30,15 @@ export default defineComponent({
         return `breaking-news-ticker-news--${effectName.value}`
       }
     })
+    const isRtl = computed(() => config.value.rtl || false)
 
     const effectStyle = computed(() => {
       if (effectName.value === effectEnum.SCROLL) {
-        return { left: `${leftStyle.value}px` }
+        if (isRtl.value) {
+          return { right: `${directionStyle.value}px` }
+        } else {
+          return { left: `${directionStyle.value}px` }
+        }
       }
     })
 

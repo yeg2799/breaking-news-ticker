@@ -1,7 +1,7 @@
 import { ref, onUnmounted } from 'vue-demi'
 
 export default () => {
-  const leftStyle = ref(0)
+  const directionStyle = ref(0)
   let scrollInterval
 
   onUnmounted(() => {
@@ -17,17 +17,17 @@ export default () => {
         container?.appendChild(firstChild)
       }
 
-      if (-leftStyle.value < firstChild?.clientWidth) {
-        leftStyle.value -= 1
+      if (-directionStyle.value < firstChild?.clientWidth) {
+        directionStyle.value -= 1
       } else {
-        leftStyle.value = 0
+        directionStyle.value = 0
         moveToAppendChild()
       }
     }, 10)
   }
 
   return {
-    leftStyle,
+    directionStyle,
     scrollEffect
   }
 }
