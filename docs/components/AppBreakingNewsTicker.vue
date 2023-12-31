@@ -29,12 +29,6 @@ export default defineComponent({
             effect: 'scroll'
           }
         },
-        navigation: {
-          autoPlay: true,
-          duration: 5000,
-          isVisible: true,
-          bgColor: '#f6f6f6'
-        }
       }
     }
 
@@ -44,14 +38,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped>
-button {
-  border: 2px solid #ddd;
-  padding: 0.4rem 0.6rem;
-}
-
-.v-dropdown-menu ::v-deep(.v-dropdown-menu__container) {
-  color: #201e1b !important;
-}
-</style>
