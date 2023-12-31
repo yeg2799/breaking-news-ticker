@@ -1,6 +1,6 @@
-$breaking-news-ticker-news: '.breaking-news-ticker-news';
-
 .breaking-news-ticker-news {
+  $breaking-news-ticker-news: '.breaking-news-ticker-news';
+
   width: 100%;
   padding-left: 10px;
 
@@ -9,7 +9,7 @@ $breaking-news-ticker-news: '.breaking-news-ticker-news';
     display: flex;
     scroll-behavior: smooth;
 
-    .#{$breaking-news-ticker-news}__item {
+    #{$breaking-news-ticker-news}__item {
       padding: 0 10px;
     }
   }
