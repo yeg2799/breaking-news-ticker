@@ -19,6 +19,7 @@ interface BreakingNewsItemConfig {
 
 export interface BreakingNewsConfig {
   rtl?: boolean
+  loop?: boolean
   borderColor?: String
   label: BreakingNewsLabelConfig
   news: BreakingNewsItemConfig

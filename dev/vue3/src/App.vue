@@ -32,12 +32,6 @@ export default defineComponent({
           animation: {
             effect: 'scroll'
           }
-        },
-        navigation: {
-          autoPlay: true,
-          duration: 5000,
-          isVisible: true,
-          bgColor: '#f6f6f6'
         }
       }
     }

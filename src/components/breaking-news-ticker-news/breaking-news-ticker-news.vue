@@ -3,7 +3,7 @@ transition-group#container.breaking-news-ticker-news(:name="effectName" tag="div
   template(v-if="effectName === effectEnum.SCROLL")
     .breaking-news-ticker-news__item(v-for="(item, index) in repeatedNewsData" :key="`key-${index + 1}`" :class="[dublicateClass(index)]")
       span {{ item.title }}
-  template(v-else)
+  template(v-else-if="effectName !== effectEnum.SCROLL")
     .breaking-news-ticker-news__item(
       v-for="(item, index) in news"
       v-show="index === activeNews"
@@ -23,6 +23,7 @@ export default defineComponent({
   setup() {
     const { news, repeatedNewsData, activeNews, config } = inject('root')
     const { leftStyle, scrollEffect } = useEffect()
+
     const effectName = computed(() => config.value.news?.animation?.effect || null)
     const effectClass = computed(() => {
       if (effectName.value) {
@@ -36,13 +37,6 @@ export default defineComponent({
       }
     })
 
-    onMounted(() => {
-      //scroll
-      if (effectName.value === effectEnum.SCROLL) {
-        scrollEffect()
-      }
-    })
-
     const activeClass = (index, activeNews) => {
       return { 'breaking-news-ticker-news__item--active': index === activeNews }
     }
@@ -50,6 +44,13 @@ export default defineComponent({
     const dublicateClass = index => {
       return { 'breaking-news-ticker-news__dublicate-item': index > news.value.length - 1 }
     }
+
+    onMounted(() => {
+      //scroll
+      if (effectName.value === effectEnum.SCROLL) {
+        scrollEffect()
+      }
+    })
 
     return {
       news,

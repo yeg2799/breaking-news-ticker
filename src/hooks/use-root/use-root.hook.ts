@@ -22,7 +22,7 @@ export default () => {
   const setActiveNews = (process: string) => {
     switch (process) {
       case processEnum.PREV:
-        state.activeNews--
+        state.activeNews = state.activeNews === 0 ? state.news.length - 1 : --state.activeNews
         break
       case processEnum.NEXT:
         state.activeNews++

@@ -25,19 +25,20 @@ export default Vue.extend({
         news: BreakingNewsMocks,
         config: {
           rtl: false,
-          borderColor: '#EF7B7B',
+          loop: true,
+          borderColor: '#1B1B1E',
           label: {
             title: 'Breaking News',
-            bgColor: '#EF7B7B',
+            bgColor: '#1B1B1E',
             color: '#fff'
           },
           news: {
             animation: {
-              effect: 'slide-right'
+              effect: 'slide-up'
             }
           },
           navigation: {
-            autoPlay: false,
+            autoPlay: true,
             isVisible: true
           }
         }

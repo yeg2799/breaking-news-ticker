@@ -1,14 +1,14 @@
 <template lang="pug">
-.breaking-news-ticker-navigation
+.breaking-news-ticker-navigation(v-if="isVisibleNavigation")
   button.breaking-news-ticker-navigation--button.breaking-news-ticker-navigation--left-button(
-    :disabled="isFirstNews"
+    :disabled="isFirstNews && !isLoop"
     :style="{ backgroundColor: navigationConfig.bgColor }"
     @click="handleClicked(processEnum.PREV)"
   )
     svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24")
       path(stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentcolor" d="M15 18L9 12L15 6")
   button.breaking-news-ticker-navigation--button.breaking-news-ticker-navigation--right-button(
-    :disabled="isLastNews"
+    :disabled="isLastNews && !isLoop"
     :style="{ backgroundColor: navigationConfig.bgColor }"
     @click="handleClicked(processEnum.NEXT)"
   )
@@ -24,18 +24,24 @@ export default defineComponent({
   name: 'BreakingNewsTickerNavigation',
   setup() {
     const { setActiveNews, activeNews, news, resetActiveNews, config } = inject('root')
+
     const navigationConfig = computed(() => config.value.navigation)
+    const isLoop = computed(() => config.value.loop || false)
     const isFirstNews = computed(() => activeNews.value === 0)
     const isLastNews = computed(() => activeNews.value === news.value.length - 1)
     const isScrollEffect = computed(() => config.value.news?.animation?.effect === effectEnum.SCROLL)
+    const isVisibleNavigation = computed(() => !isScrollEffect.value && navigationConfig.value.isVisible)
+
     let interval
 
     const handleClicked = async (process: '') => {
-      await clearInterval(interval)
-
-      await setActiveNews(process)
-
-      await createInterval()
+      if (isLoop.value) {
+        loopProcess(process)
+      } else {
+        await clearInterval(interval)
+        await setActiveNews(process)
+        await createInterval()
+      }
     }
 
     onMounted(() => {
@@ -52,7 +58,15 @@ export default defineComponent({
         } else {
           handleClicked(processEnum.NEXT)
         }
-      }, navigationConfig.value.duration || 2000)
+      }, navigationConfig.value.duration || 5000)
+    }
+
+    const loopProcess = process => {
+      if (process === processEnum.NEXT && isLastNews.value) {
+        resetActiveNews()
+      } else {
+        setActiveNews(process)
+      }
     }
 
     return {
@@ -61,7 +75,9 @@ export default defineComponent({
       activeNews,
       handleClicked,
       processEnum,
-      navigationConfig
+      navigationConfig,
+      isLoop,
+      isVisibleNavigation
     }
   }
 })
